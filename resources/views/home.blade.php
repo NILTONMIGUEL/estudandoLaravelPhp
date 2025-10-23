@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
+@section('title','L- Home')
 @section('conteudo')
-    <h1>Bem-vindo à página inicial</h1>
-    <p>Esta é a página inicial do seu aplicativo Laravel.</p>
+    <h1><i class="bi bi-house-fill"></i>Home</h1>
+   
 @endsection
