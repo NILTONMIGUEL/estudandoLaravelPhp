@@ -26,7 +26,7 @@
         <a class="nav-link active" aria-current="page" href="/">Home</a>
         <a class="nav-link" aria-current="page" href="/">Categorias</a>
         <a class="nav-link" href="/produtos">Mais Pesquisado</a>
-        <a class="nav-link" href="/login" >login</a>
+
       </div>
     </div>
   </div>

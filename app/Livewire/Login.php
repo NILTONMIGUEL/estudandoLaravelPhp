@@ -2,28 +2,38 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Login extends Component
 {
+    //criando variavel para email e senha importante que seja igual do input
     public $email;
     public $password;
 
-    public function login(){
-       $this->validate([
-        'email'=>'required|email',
-        'password'=>'required|min:6',
-       ]);
+   public function login(){
 
-       $auhenticated = Auth::attempt([
-            'email'=>$this->email,
-            'password'=>$this->password
-       ]);
+    //pegando os valores do input
+        $this->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
 
-       if($auhenticated){
+        //fazendo a verificação
+        $authenticated = Auth::attempt([
+            'email' => $this->email,
+            'password' => $this->password,
+        ]);
+
+        //se a verificação der verdadeiro vou para a tela home
+        if($authenticated){
             return redirect()->route('home');
-       }
-    }
+        }
+        else{
+            //caso der erro me mostre uma mensagem
+            session()->flash('error' , 'email ou senha inválida');
+        }
+   }
 
     public function render()
     {
