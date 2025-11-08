@@ -25,9 +25,10 @@ class Login extends Component
             'password' => $this->password,
         ]);
 
-        //se a verificação der verdadeiro vou para a tela home
+        //se a verificação der verdadeiro vou para a tela do painel
         if($authenticated){
-            return redirect()->route('home');
+            //mudando a tela para ir para a tela do painel
+            return redirect()->route('painel');
         }
         else{
             //caso der erro me mostre uma mensagem

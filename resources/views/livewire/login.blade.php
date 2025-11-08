@@ -1,7 +1,7 @@
 <div class="login-container">
     <h2>Bem-vindo(a) ao <br><span style="color:#0d6efd;">{{config('app.name')}}</span></h2>
     <form action="#" method="POST" wire:submit="login">
-      @csrf
+      @csrf <!--serve para manter ele mais seguro , para ser enviado apenas desse formulário-->
       <div class="input-group">
         <input type="email" name="email" placeholder="E-mail" wire:model="email" id="email" required>
       </div>
