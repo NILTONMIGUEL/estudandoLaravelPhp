@@ -22,17 +22,17 @@
       <h4 class="text-white mb-4">Admin</h4>
       <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item">
-          <a href="/painel" class="nav-link {{request()->is('painel') ? 'active' : ''}}">
+          <a href="{{route('painel')}}" class="nav-link {{request()->is('painel') ? 'active' : ''}}">
             <i class="bi bi-speedometer2 me-2"></i> Dashboard
           </a>
         </li>
         <li>
-          <a href="/usuarios" class="nav-link {{request()->is('usuarios') ? 'active' : ''}}">
+          <a href="{{route('usuarios')}}" class="nav-link {{request()->is('usuarios') ? 'active' : ''}}">
             <i class="bi bi-people me-2"></i> Usuários
           </a>
         </li>
         <li>
-          <a href="/produtos" class="nav-link {{request()->is('produtos') ? 'active' : ''}}">
+          <a href="{{route('produtos')}}" class="nav-link {{request()->is('produtos') ? 'active' : ''}}">
             <i class="bi bi-box-seam me-2"></i> Produtos
           </a>
         </li>
@@ -43,7 +43,7 @@
         </li>-->
         <li>
         <!--chamando a rota logout -->
-          <a href="/logout" class="nav-link">
+          <a href="{{route('logout')}}" class="nav-link">
             <i class="bi bi-door-closed me-2"></i> Sair
           </a>
         </li>
@@ -54,7 +54,6 @@
         @yield('conteudo')
     </div>
   </div>
-
 
 
 @livewireScripts
