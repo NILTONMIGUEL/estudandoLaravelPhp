@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,16 +18,23 @@ Route::middleware('auth')->group(function(){
         return view('admin.dashboard');
     })->name('painel');
 
+
+
     //criando a rota para usuários
-    Route::get('/usuarios',function(){
-        return view('admin.usuarios');
-    })->name('usuarios');
+    Route::get('/usuarios',[UserController::class, 'index']
+    )->name('usuarios');
+    Route::get('/usuarios/cadastrar',[UserController::class , 'create']
+    )->name('usuarios-cadastrar');
+    Route::get('/usuarios/alterar{user}',[UserController::class, 'edit'] 
+    )->name('usuarios-alterar');
+ 
+
 
     //criando a rota de produtos
     Route::get('/produtos',function(){
         return view('admin.produtos');
     })->name('produtos');
-    
+
     //criando a rota logout para voltar a tela de login
     Route::get('/logout',function(){
         Auth::logout();

@@ -19,7 +19,7 @@ class BuscarUsuarios extends Component
        $query = User::query()
         ->where('name','like','%'.$this->search.'%')
         ->orWhere('email','like','%'.$this->search.'%')
-        ->orderBy('name','asc');
+        ->orderBy('id','asc');
 
         $users = $query->paginate(10);
 
