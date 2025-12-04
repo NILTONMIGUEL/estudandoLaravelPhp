@@ -14,18 +14,20 @@ class CriarUsuarios extends Component
     public $password = '';
 
     //criando o usuario
-    public ? User $user = null;
+    public ? User $user = null; 
+
     public function mount(){
+        
         if($this->user){
             $this->name = $this->user->name;
             $this->email = $this->user->email;
-            $this->password = $this->user->password;
+            
         }
     }
 
     public function salvar(){
         $this->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255', 
             'email' => 'required|email|unique:users,email' . ($this->user ? ',' . $this->user->id : ''),
             'password' => $this->user ? 'nullable|string|min:6' : 'required|string|min:6',
         ]);

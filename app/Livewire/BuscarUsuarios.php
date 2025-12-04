@@ -14,6 +14,14 @@ class BuscarUsuarios extends Component
     public $search = '';
     protected $listeners = ['refresh' => '$refresh'];
 
+    public function apagar(User $user)
+    {
+        $user->delete();
+        $this->dispatch('refresh');
+        session()->flash('message', 'Usuário removido com sucesso!');
+    }
+
+
     public function render()
     {
        $query = User::query()

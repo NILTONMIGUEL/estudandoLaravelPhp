@@ -12,11 +12,11 @@ class UserController extends Controller
     }
 
     public function create(){
-        return view('admin.cadastro-usuario');
+        return view('admin.criar-usuario');
     }
     
     public function edit(User $user){
-        return view('admin.cadastro-usuario',[
+        return view('admin.criar-usuario',[
             'user' => $user,
         ]);
     }

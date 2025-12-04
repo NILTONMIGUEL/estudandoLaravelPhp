@@ -19,8 +19,8 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>
-                            <button class="bi bi-pencil btn btn-primary"></button>
-                            <button class="bi bi-trash btn btn-danger"></button>
+                            <a href="{{route('usuarios-alterar', $user->id)}}" class="bi bi-pencil btn btn-primary"></a>
+                            <a href="#" wire:click='apagar({{$user->id}})' class="bi bi-trash btn btn-danger"></a1>
                         </td>
 
                     </tr>
