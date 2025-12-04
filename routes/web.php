@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function(){
     )->name('usuarios');
     Route::get('/usuarios/cadastrar',[UserController::class , 'create']
     )->name('usuarios-cadastrar');
-    Route::get('/usuarios/alterar{user}',[UserController::class, 'edit'] 
+    Route::get('/usuarios/alterar/{user}',[UserController::class, 'edit'] 
     )->name('usuarios-alterar');
  
 

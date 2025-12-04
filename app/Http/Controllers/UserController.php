@@ -14,8 +14,9 @@ class UserController extends Controller
     public function create(){
         return view('admin.cadastro-usuario');
     }
+    
     public function edit(User $user){
-        return view('admin.cadastrar-usuario',[
+        return view('admin.cadastro-usuario',[
             'user' => $user,
         ]);
     }
